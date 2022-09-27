@@ -1,0 +1,5 @@
+package tukorea.websvc.club.persistence;
+
+public class StudentDAO {
+	
+}
