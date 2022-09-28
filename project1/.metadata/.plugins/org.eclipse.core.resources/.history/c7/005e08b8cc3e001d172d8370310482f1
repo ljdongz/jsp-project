@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More</title>
+    <link rel = "stylesheet" href = "resources/more.css" type="text/css">
+</head>
+<body style="background-color:#4E5A56">
+
+<div id="container">
+    <header id = "header"> 
+        <nav class ="menu">
+            <ul>
+                <li><a href = "#" onclick="goBack()"> <b>뒤로가기</b></a></li>
+            </ul>
+        </nav>
+    </header> 
+  <div class="list">
+      <div class="one">
+        <span class="profile"><img src="vim.jpeg" width="300px;" height="300px" alt=""/></span> 
+        <h3><strong>Hello! I'm Stella.</strong> <br>You can scroll down if you want to see me more!</h3>
+      </div>
+  </div>
+<div>
+<script>
+	function goBack() {
+		window.history.back();
+	}
+</script>
+</body>

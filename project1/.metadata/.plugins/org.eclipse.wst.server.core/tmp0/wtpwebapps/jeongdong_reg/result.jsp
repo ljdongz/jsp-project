@@ -57,6 +57,9 @@
 
 
 	<p style="text-align: center;">
+		<a href="more.html">더보기</a>
+		<br>
+		<br>
 		<a href="http://localhost:8080/jeongdong_reg/welcome.html">메인 페이지
 			이동</a>
 	</p>
