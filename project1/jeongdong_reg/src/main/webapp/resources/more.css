@@ -58,9 +58,7 @@ h3 {
   display: inline-block;
   padding: 0.5rem;
   margin-top: 20px;
-  border: 1px solid gray;
   background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgb(255, 255, 255, 0.5);
 }
 
 .profile img {
@@ -124,4 +122,12 @@ h1 {
   font-size: 50px;
   font-style: italic;
   margin: 35px;
+}
+
+.table td, .table th,
+.info {
+    padding: 0.75rem;
+    vertical-align: middle;
+    border-top: 1px solid #dee2e600;
+    color: white;
 }

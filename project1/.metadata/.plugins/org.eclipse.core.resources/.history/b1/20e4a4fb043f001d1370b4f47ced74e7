@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>More</title>
+
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+	integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="resources/more.css" type="text/css">
+
+</head>
+<body style="background-color: #4E5A56">
+
+	<div id="container">
+		<header id="header">
+			<nav class="menu">
+				<ul>
+					<li><a href="#" onclick="goBack()">뒤로가기</a></li>
+				</ul>
+			</nav>
+		</header>
+		<div class="list">
+		
+			<div class="one">
+			
+				<table align="center" class="table table-striped-columns" style="width: 50%">
+					<tbody>
+						<tr>
+							<td class="profile"><img
+								src="resources/ios.png" width="300px;" height="300px" alt=""></td>
+							<td class="info"><strong>Hello!
+									I'm Lee Jeong-Dong</strong> <br><br>
+									I'm a student at TUKorea
+									I'm preparing iOS Developer 🍎</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+		</div>
+	</div>
+
+	<script>
+		function goBack() {
+			window.history.back();
+		}
+	</script>
+</body>
+</html>
