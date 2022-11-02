@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" import="tukorea.websvc.club.domain.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,10 +18,10 @@
 	<header>
 		TUKOREA 2022 <br> Web Service Programming Community
 	</header>
+	<p id="sect"><%=request.getAttribute("greetings") %><br>
 
 	<p id="sect">커뮤니티 가입을 축하합니다.</p>
 
-	<%@ page import="tukorea.websvc.club.domain.*" %>
 	<% StudentVO studentVO = (StudentVO)request.getAttribute("studentVO"); %>
 
 	<div>
@@ -57,10 +57,11 @@
 
 
 	<p style="text-align: center;">
-		<a href="more.html">더보기</a>
-		<br>
-		<br>
 		<a href="http://localhost:8080/jeongdong_reg/welcome.html">메인 페이지
+			이동</a>
+	</p>
+	<p style="text-align: center;">
+		<a href="http://localhost:8080/jeongdong_reg/StudentSevlet?cmd=list" target="_self">전체 회원 목록 보기
 			이동</a>
 	</p>
 </body>
