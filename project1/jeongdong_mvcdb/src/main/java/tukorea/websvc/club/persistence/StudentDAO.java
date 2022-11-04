@@ -115,8 +115,8 @@ public class StudentDAO {
 			e.printStackTrace();
 		} finally {
 			disconnect();
-			return studentVO;
 		}
+		return studentVO;
 	}
 	
 	public void delete(String strId) {
