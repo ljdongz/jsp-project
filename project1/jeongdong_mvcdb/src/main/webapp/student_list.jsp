@@ -10,6 +10,9 @@
 
 </head>
 <body>
+	<header>
+		Member List
+	</header>
 	<hr>
 	<p style="text-align: center;">
 		<a href="http://localhost:8080/jeongdong_mvcdb/welcome.html"
@@ -37,7 +40,10 @@
 				<td><%=vo.getDepart()%></td>
 				<td><%=vo.getMobile()%></td>
 				<td><%=vo.getEmail()%></td>
-				<td></td>
+				<td>
+					<a href="http://localhost:8080/jeongdong_mvcdb/StudentSevlet?cmd=update&id=<%= vo.getId() %>" target="_self"> 수정</a>
+					<a href="http://localhost:8080/jeongdong_mvcdb/StudentSevlet?cmd=delete&id=<%= vo.getId() %>" target="_self"> 삭제</a>
+				</td>
 			</tr>
 			<%
 			}

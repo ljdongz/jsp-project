@@ -40,6 +40,21 @@ public class StudentSevlet extends HttpServlet {
 			request.setAttribute("studentList", studentList);
 			RequestDispatcher view = request.getRequestDispatcher("student_list.jsp");
 			view.forward(request, response);
+		} else if (cmdReq.equals("delete")) {
+			StudentDAO dao = new StudentDAO();
+			String strId = request.getParameter("id");
+			dao.delete(strId);
+			
+			ArrayList<StudentVO> studentList = dao.getStudentList();
+			request.setAttribute("studentList", studentList);
+			RequestDispatcher view = request.getRequestDispatcher("student_list.jsp");
+			view.forward(request, response);
+		} else if (cmdReq.equals("update")) {
+			StudentDAO dao = new StudentDAO();
+			StudentVO student = dao.read(request.getParameter("id"));
+			request.setAttribute("student", student);
+			RequestDispatcher view = request.getRequestDispatcher("update.jsp");
+			view.forward(request, response);
 		}
 	}
 
@@ -79,6 +94,26 @@ public class StudentSevlet extends HttpServlet {
 			
 			request.setAttribute("studentVO", studentVO);
 			request.setAttribute("greetings", message);
+			
+			RequestDispatcher view = request.getRequestDispatcher("result.jsp");
+			view.forward(request, response);
+		} else if (cmdReq.equals("update")) {
+			StudentVO studentVO = new StudentVO();
+			StudentDAO studentDAO = new StudentDAO();
+			
+			studentVO.setId(request.getParameter("id"));
+			studentVO.setPasswd(request.getParameter("passwd"));
+			studentVO.setUsername(request.getParameter("username"));
+			studentVO.setSnum(request.getParameter("snum"));
+			studentVO.setDepart(request.getParameter("depart"));
+			studentVO.setMobile(request.getParameter("mobile"));
+			studentVO.setEmail(request.getParameter("email"));
+			
+			if(studentDAO.update(studentVO)) message = "수정이 완료되었습니다.";
+			else message = "수정 실패입니다. ";
+			
+			request.setAttribute("greetings", message);
+			request.setAttribute("studentVO", studentVO);
 			
 			RequestDispatcher view = request.getRequestDispatcher("result.jsp");
 			view.forward(request, response);
