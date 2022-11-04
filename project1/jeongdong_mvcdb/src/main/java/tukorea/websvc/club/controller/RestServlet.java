@@ -60,6 +60,29 @@ public class RestServlet extends HttpServlet {
 			}
 			out.print(arrayJson);
 		}
+		
+		if(cmdReq.equals("read")) {
+			try {
+				String id = request.getParameter("id");
+				if (id == null ) {
+					out.print("계정을 확인하세요");
+					return;
+				}
+				StudentVO vo = studentDAO.read(id);
+				JSONObject json = new JSONObject();
+				json.put("id", vo.getId());
+				json.put("password", vo.getPasswd());
+				json.put("username", vo.getUsername());
+				json.put("snum", vo.getSnum());
+				json.put("depart", vo.getDepart());
+				json.put("mobile", vo.getMobile());
+				json.put("email", vo.getEmail());
+				arrayJson.put(json);
+			} catch(JSONException e) {
+				e.printStackTrace();
+			}
+			out.print(arrayJson);
+		}
 	}
 
 	/**
