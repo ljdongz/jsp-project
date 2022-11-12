@@ -34,6 +34,8 @@ public class StudentSevlet extends HttpServlet {
 		
 		if(cmdReq.equals("join")) {
 			response.sendRedirect("register.html");
+		} else if (cmdReq.equals("login")) {
+			response.sendRedirect("login.html");
 		} else if (cmdReq.equals("list")) {
 			StudentDAO dao = new StudentDAO();
 			ArrayList<StudentVO> studentList = dao.getStudentList();  // DB에 저장된 학생 객체들을 불러
@@ -97,6 +99,26 @@ public class StudentSevlet extends HttpServlet {
 			
 			RequestDispatcher view = request.getRequestDispatcher("result.jsp");
 			view.forward(request, response);
+		} else if (cmdReq.equals("login")) {
+			StudentVO studentVO;
+			StudentDAO studentDAO = new StudentDAO();
+			
+			String id = request.getParameter("id");
+			String passwd = request.getParameter("passwd");
+			
+			studentVO = studentDAO.read(id);
+			if (studentVO.getId().equals(id) && studentVO.getPasswd().equals(passwd)) {
+				RequestDispatcher view = request.getRequestDispatcher("login.html");
+				view.forward(request, response);
+			} else {
+				message = "반갑";
+				request.setAttribute("greetings", message);
+				request.setAttribute("studentVO", studentVO);
+				RequestDispatcher view = request.getRequestDispatcher("result.jsp");
+				view.forward(request, response);
+			}
+			
+			
 		} else if (cmdReq.equals("update")) {
 			StudentVO studentVO = new StudentVO();
 			StudentDAO studentDAO = new StudentDAO();
