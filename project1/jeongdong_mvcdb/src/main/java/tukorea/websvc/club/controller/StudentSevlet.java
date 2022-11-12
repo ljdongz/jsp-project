@@ -54,6 +54,7 @@ public class StudentSevlet extends HttpServlet {
 		} else if (cmdReq.equals("update")) {
 			StudentDAO dao = new StudentDAO();
 			StudentVO student = dao.read(request.getParameter("id"));
+			
 			request.setAttribute("student", student);
 			RequestDispatcher view = request.getRequestDispatcher("update.jsp");
 			view.forward(request, response);

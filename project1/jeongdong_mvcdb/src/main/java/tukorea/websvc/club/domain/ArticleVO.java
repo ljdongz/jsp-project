@@ -4,6 +4,14 @@ public class ArticleVO {
 	private String id;
 	private String title;
 	private String content;
+	private String aid;
+	
+	public String getAid() {
+		return aid;
+	}
+	public void setAid(String aid) {
+		this.aid = aid;
+	}
 	public String getId() {
 		return id;
 	}

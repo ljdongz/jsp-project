@@ -52,73 +52,66 @@ public class ArticleDAO {
 		return true;
 	}
 
-//	public boolean update(StudentVO vo) {
-//		connect();
-//		String sql = "update student set passwd=?, username=?, snum=?, depart=?, mobile=?, email=? where id=?";
-//		try {
-//			pstmt = conn.prepareStatement(sql);
-//			pstmt.setString(1, vo.getPasswd());
-//			pstmt.setString(2, vo.getUsername());
-//			pstmt.setString(3, vo.getSnum());
-//			pstmt.setString(4, vo.getDepart());
-//			pstmt.setString(5, vo.getMobile());
-//			pstmt.setString(6, vo.getEmail());
-//			pstmt.setString(7, vo.getId());
-//			pstmt.executeUpdate();
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		} finally {
-//			disconnect();
-//		}
-//
-//		return true;
-//	}
+	public boolean update(ArticleVO vo) {
+		connect();
+		String sql = "update article set title=?, content=? where aid=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, vo.getTitle());
+			pstmt.setString(2, vo.getContent());
+			pstmt.setString(3, vo.getAid());
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			disconnect();
+		}
 
-//	public StudentVO read(String strId) {
-//		connect();
-//		StudentVO studentVO = new StudentVO();
-//		String sql = "select * from student where id=?";
-//		ResultSet rs = null;
-//		try {
-//			pstmt = conn.prepareStatement(sql);
-//			pstmt.setString(1, strId);
-//			rs = pstmt.executeQuery();
-//			while (rs.next()) {
-//				studentVO.setId(rs.getString("id"));
-//				studentVO.setPasswd(rs.getString("passwd"));
-//				studentVO.setUsername(rs.getString("username"));
-//				studentVO.setSnum(rs.getString("snum"));
-//				studentVO.setDepart(rs.getString("depart"));
-//				studentVO.setMobile(rs.getString("mobile"));
-//				studentVO.setEmail(rs.getString("email"));
-//			}
-//			rs.close();
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		} finally {
-//			disconnect();
-//		}
-//		return studentVO;
-//	}
+		return true;
+	}
 
-//	public void delete(String strId) {
-//		connect();
-//		String sql = "delete from student where id=?";
-//		try {
-//			pstmt = conn.prepareStatement(sql);
-//			pstmt.setString(1, strId);
-//			pstmt.executeUpdate();
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		} finally {
-//			disconnect();
-//		}
-//	}
+	public ArticleVO read(String strId) {
+		connect();
+		ArticleVO articleVO = new ArticleVO();
+		String sql = "select * from article where aid=?";
+		ResultSet rs = null;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, strId);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				articleVO.setTitle(rs.getString("title"));
+				articleVO.setContent(rs.getString("content"));
+				articleVO.setAid(rs.getString("aid"));
+				articleVO.setId(rs.getString("id"));
+			}
+			rs.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			disconnect();
+		}
+		return articleVO;
+	}
+
+	public void delete(String strId) {
+		connect();
+		String sql = "delete from article where aid=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, strId);
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			disconnect();
+		}
+	}
 
 	public ArrayList<ArticleVO> getArticleList(String id) {
 		connect();
 		ArrayList<ArticleVO> articlelist = new ArrayList<ArticleVO>();
-		String sql = "select * from article where id=(?)";
+		String sql = "select * from article where id=?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
@@ -127,6 +120,8 @@ public class ArticleDAO {
 				ArticleVO vo = new ArticleVO();
 				vo.setTitle(rs.getString("title"));
 				vo.setContent(rs.getString("content"));
+				vo.setId(rs.getString("id"));
+				vo.setAid(rs.getString("aid"));
 				articlelist.add(vo);
 			}
 			rs.close();

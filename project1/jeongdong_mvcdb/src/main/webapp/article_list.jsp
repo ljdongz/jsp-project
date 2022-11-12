@@ -33,9 +33,9 @@
 				<td><%=vo.getTitle()%></td>
 				<td><%=vo.getContent()%></td>
 				<td><a
-					href="http://localhost:8080/jeongdong_mvcdb/StudentSevlet?cmd=update&id=<%=vo.getId()%>"
+					href="http://localhost:8080/jeongdong_mvcdb/ArticleServlet?cmd=update&aid=<%=vo.getAid()%>"
 					target="_self"> 수정</a> <a
-					href="http://localhost:8080/jeongdong_mvcdb/StudentSevlet?cmd=delete&id=<%=vo.getId()%>"
+					href="http://localhost:8080/jeongdong_mvcdb/ArticleServlet?cmd=delete&aid=<%=vo.getAid()%>&id=<%=vo.getId() %>"
 					target="_self"> 삭제</a></td>
 			</tr>
 			<%
