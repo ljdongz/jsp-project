@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" import="tukorea.websvc.club.domain.*"%>
 <!DOCTYPE html>
+
 <html>
 <head>
 <meta charset="UTF-8">
@@ -11,15 +12,13 @@
 
 </head>
 <body>
+	<%
+	StudentVO studentVO = (StudentVO) request.getAttribute("studentVO");
+	%>
 	<header>
 		TUKOREA 2022 <br> Web Service Programming Community
 	</header>
-	<p id="sect"><%=request.getAttribute("greetings")%><br>
-
-		<%
-		StudentVO studentVO = (StudentVO) request.getAttribute("studentVO");
-		%>
-	
+	<p id="sect"><%=request.getAttribute("greetings") + studentVO.getId() %><br>
 	<div>
 		<table>
 			<tbody>
@@ -48,8 +47,11 @@
 			페이지 이동</a>
 	</p>
 	<p style="text-align: center;">
+		<a href="http://localhost:8080/jeongdong_mvcdb/ArticleServlet?cmd=list&id=1" target="_self">Todo List</a>
+	</p>
+	<!-- 	<p style="text-align: center;">
 		<a href="http://localhost:8080/jeongdong_mvcdb/StudentSevlet?cmd=list"
 			target="_self">전체 회원 목록 보기 이동</a>
-	</p>
+	</p> -->
 </body>
 </html>
