@@ -95,7 +95,7 @@ public class StudentSevlet extends HttpServlet {
 			else message = "가입 실패입니다";
 			
 			request.setAttribute("studentVO", studentVO);
-			request.setAttribute("id", request.getParameter("id"));
+			//request.setAttribute("id", request.getParameter("id"));
 			request.setAttribute("greetings", message);
 			
 			RequestDispatcher view = request.getRequestDispatcher("result.jsp");

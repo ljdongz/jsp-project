@@ -34,23 +34,23 @@ public class ArticleDAO {
 		}
 	}
 
-//	public boolean add(ArticleVO ao) {
-//		connect();
-//		String sql = "insert into article values (?,?,?)";
-//		try {
-//			pstmt = conn.prepareStatement(sql);
-//			pstmt.setString(1, ao.getId());
-//			pstmt.setString(2, ao.getTitle());
-//			pstmt.setString(3, ao.getContent());
-//			pstmt.executeUpdate();
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//			return false;
-//		} finally {
-//			disconnect();
-//		}
-//		return true;
-//	}
+	public boolean add(ArticleVO ao) {
+		connect();
+		String sql = "insert into article(id, title, content) values (?,?,?)";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, ao.getId());
+			pstmt.setString(2, ao.getTitle());
+			pstmt.setString(3, ao.getContent());
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		} finally {
+			disconnect();
+		}
+		return true;
+	}
 
 //	public boolean update(StudentVO vo) {
 //		connect();
@@ -118,13 +118,13 @@ public class ArticleDAO {
 	public ArrayList<ArticleVO> getArticleList(String id) {
 		connect();
 		ArrayList<ArticleVO> articlelist = new ArrayList<ArticleVO>();
-		String sql = "select * from article where id=" + id;
+		String sql = "select * from article where id=(?)";
 		try {
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
 			ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
 				ArticleVO vo = new ArticleVO();
-				vo.setId(rs.getString("id"));
 				vo.setTitle(rs.getString("title"));
 				vo.setContent(rs.getString("content"));
 				articlelist.add(vo);

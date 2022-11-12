@@ -2,6 +2,11 @@
 	pageEncoding="UTF-8" import="tukorea.websvc.club.domain.*"%>
 <!DOCTYPE html>
 
+<%
+	request.setCharacterEncoding("UTF-8");
+	session.setAttribute("id", request.getParameter("id"));
+%>
+
 <html>
 <head>
 <meta charset="UTF-8">
@@ -47,7 +52,7 @@
 			페이지 이동</a>
 	</p>
 	<p style="text-align: center;">
-		<a href="http://localhost:8080/jeongdong_mvcdb/ArticleServlet?cmd=list&id=1" target="_self">Todo List</a>
+		<a href="http://localhost:8080/jeongdong_mvcdb/ArticleServlet?cmd=list&id=<%= session.getAttribute("id") %>" target="_self">Todo List</a>
 	</p>
 	<!-- 	<p style="text-align: center;">
 		<a href="http://localhost:8080/jeongdong_mvcdb/StudentSevlet?cmd=list"

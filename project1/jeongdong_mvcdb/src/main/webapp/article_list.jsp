@@ -14,6 +14,10 @@
 		<a href="http://localhost:8080/jeongdong_mvcdb/welcome.html"
 			target="_self">메인 페이지 이동</a>
 	</p>
+	<p style="text-align: center;">
+		<a href="http://localhost:8080/jeongdong_mvcdb/create_article.jsp"
+			target="_self">추가</a>
+	</p>
 	<table>
 		<tbody>
 			<tr>

@@ -36,7 +36,7 @@ public class ArticleServlet extends HttpServlet {
 
 		if (cmdReq.equals("list")) {
 			ArticleDAO dao = new ArticleDAO();
-			ArrayList<ArticleVO> articleList = dao.getArticleList(id); // DB에 저장된 학생 객체들을 불러
+			ArrayList<ArticleVO> articleList = dao.getArticleList(id);
 			request.setAttribute("ArticleList", articleList);
 			RequestDispatcher view = request.getRequestDispatcher("article_list.jsp");
 			view.forward(request, response);
@@ -50,7 +50,29 @@ public class ArticleServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		
+		String cmdReq = "";
+		cmdReq = request.getParameter("cmd");
+		
+		if (cmdReq.equals("create")) {
+			ArticleVO vo = new ArticleVO();
+			vo.setId(request.getParameter("id"));
+			vo.setTitle(request.getParameter("title"));
+			vo.setContent(request.getParameter("content"));
+			
+			
+			
+			ArticleDAO dao = new ArticleDAO();
+			dao.add(vo);
+			
+			ArrayList<ArticleVO> articleList = dao.getArticleList(request.getParameter("id"));
+			
+			RequestDispatcher view = request.getRequestDispatcher("article_list.jsp");
+			request.setAttribute("ArticleList", articleList);
+			view.forward(request, response);
+		}
 	}
 
 }
