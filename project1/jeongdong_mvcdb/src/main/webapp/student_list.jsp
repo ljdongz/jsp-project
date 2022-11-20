@@ -11,15 +11,11 @@
 
 </head>
 <body>
-	<header> Member List </header>
+	<header> TUK Student List </header>
 	<hr>
 	<%
 	List<StudentVO> studentList = (List<StudentVO>) request.getAttribute("studentList");
 	%>
-	<p style="text-align: center;">
-		<a href="http://localhost:8080/jeongdong_mvcdb/welcome.html"
-			target="_self">메인 페이지 이동</a>
-	</p>
 	<table>
 		<tbody>
 			<tr>

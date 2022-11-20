@@ -115,8 +115,6 @@ public class StudentSevlet extends HttpServlet {
 					RequestDispatcher view = request.getRequestDispatcher("admin.jsp");
 					view.forward(request, response);
 				} else {
-					message = "반갑";
-					request.setAttribute("greetings", message);
 					request.setAttribute("studentVO", studentVO);
 					request.setAttribute("id", request.getParameter("id"));
 					RequestDispatcher view = request.getRequestDispatcher("result.jsp");

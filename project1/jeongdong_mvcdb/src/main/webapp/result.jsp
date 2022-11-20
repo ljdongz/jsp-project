@@ -21,10 +21,10 @@
 	StudentVO studentVO = (StudentVO) request.getAttribute("studentVO");
 	%>
 	<header>
-		TUKOREA 2022 <br> Web Service Programming Community
+		TUKOREA 2022 <br> To Do List
 	</header>
-	<p id="sect"><%=request.getAttribute("greetings") + studentVO.getId() %><br>
-	<div>
+	<p id="sect"><%= studentVO.getId() %>의 To Do List</p><br>
+	<%-- <div>
 		<table>
 			<tbody>
 				<tr>
@@ -44,8 +44,7 @@
 					<td><%=studentVO.getEmail()%></td>
 			</tbody>
 		</table>
-	</div>
-
+	</div> --%>
 
 	<p style="text-align: center;">
 		<a href="http://localhost:8080/jeongdong_mvcdb/welcome.html">메인

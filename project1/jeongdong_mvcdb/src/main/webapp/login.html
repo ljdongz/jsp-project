@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>Web Service Programming Homework</title>
-	<link rel="stylesheet" href="resources/student.css" type="text/css"></link>
+<meta charset="UTF-8">
+<title>Web Service Programming Homework</title>
+<link rel="stylesheet" href="resources/student.css" type="text/css"></link>
+
 </head>
 <body>
 	<header>Login Your Account</header>
-	
+
+
 	<div>
-		<form action="http://localhost:8080/jeongdong_mvcdb/StudentSevlet?cmd=login" method="post">
-		
-		<fieldset>
-			<legend>Personal Information</legend>
-			<ul>
-				<li>ID : <input type="text" name="id" autofocus required placeholder="공백없이 입력"></li>
-				<li>PASSWORD : <input type="password" name="password" autofocus required placeholder="공백없이 입력"></li>
-			</ul>
-		</fieldset>
-		<br>
-		<fieldset>
-			<input type="submit" name="submit" value="보내기">
-		</fieldset>
+		<form
+			action="http://localhost:8080/jeongdong_mvcdb/StudentSevlet?cmd=login"
+			method="post">
+
+			<fieldset>
+				<legend>Personal Information</legend>
+				<ul>
+					<li>ID : <input type="text" name="id" autofocus required
+						placeholder="공백없이 입력"></li>
+					<li>PASSWORD : <input type="password" name="password"
+						autofocus required placeholder="공백없이 입력"></li>
+				</ul>
+			</fieldset>
+			<br>
+			<fieldset>
+				<input type="submit" name="submit" value="보내기">
+			</fieldset>
 		</form>
 	</div>
 </body>
