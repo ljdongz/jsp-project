@@ -54,9 +54,6 @@
 	<p style="text-align: center;">
 		<a href="http://localhost:8080/jeongdong_mvcdb/ArticleServlet?cmd=list&id=<%= session.getAttribute("id") %>" target="_self">Todo List</a>
 	</p>
-	<!-- 	<p style="text-align: center;">
-		<a href="http://localhost:8080/jeongdong_mvcdb/StudentSevlet?cmd=list"
-			target="_self">전체 회원 목록 보기 이동</a>
-	</p> -->
+
 </body>
 </html>

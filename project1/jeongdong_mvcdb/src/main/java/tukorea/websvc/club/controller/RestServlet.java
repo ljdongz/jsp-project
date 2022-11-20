@@ -35,49 +35,71 @@ public class RestServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		
 		String cmdReq;
+		String id;
+		
 		cmdReq = request.getParameter("cmd");
+		id = request.getParameter("id");
+		
 		if(cmdReq == null) return;
 		
-		StudentDAO studentDAO = new StudentDAO();
+//		StudentDAO studentDAO = new StudentDAO();
+		
+		ArticleDAO articleDAO = new ArticleDAO();
 		JSONArray arrayJson = new JSONArray();
 		
-		if(cmdReq.equals("list")) {
+//		if(cmdReq.equals("list")) {
+//			try {
+//				List<StudentVO> studentList = studentDAO.getStudentList();
+//				for(StudentVO vo : studentList) {
+//					JSONObject json = new JSONObject();
+//					json.put("id", vo.getId());
+//					json.put("password", vo.getPasswd());
+//					json.put("username", vo.getUsername());
+//					json.put("snum", vo.getSnum());
+//					json.put("depart", vo.getDepart());
+//					json.put("mobile", vo.getMobile());
+//					json.put("email", vo.getEmail());
+//					arrayJson.put(json);
+//				}
+//			} catch(JSONException e) {
+//				e.printStackTrace();
+//			}
+//			out.print(arrayJson);
+//		}
+//		
+//		if(cmdReq.equals("read")) {
+//			try {
+//				String id = request.getParameter("id");
+//				if (id == null ) {
+//					out.print("계정을 확인하세요");
+//					return;
+//				}
+//				StudentVO vo = studentDAO.read(id);
+//				JSONObject json = new JSONObject();
+//				json.put("id", vo.getId());
+//				json.put("password", vo.getPasswd());
+//				json.put("username", vo.getUsername());
+//				json.put("snum", vo.getSnum());
+//				json.put("depart", vo.getDepart());
+//				json.put("mobile", vo.getMobile());
+//				json.put("email", vo.getEmail());
+//				arrayJson.put(json);
+//			} catch(JSONException e) {
+//				e.printStackTrace();
+//			}
+//			out.print(arrayJson);
+//		}
+		
+		if(cmdReq.equals("articles") ) {
 			try {
-				List<StudentVO> studentList = studentDAO.getStudentList();
-				for(StudentVO vo : studentList) {
+				List<ArticleVO> articleList = articleDAO.getArticleList(id);
+				for(ArticleVO vo : articleList) {
 					JSONObject json = new JSONObject();
-					json.put("id", vo.getId());
-					json.put("password", vo.getPasswd());
-					json.put("username", vo.getUsername());
-					json.put("snum", vo.getSnum());
-					json.put("depart", vo.getDepart());
-					json.put("mobile", vo.getMobile());
-					json.put("email", vo.getEmail());
+					json.put("aid", vo.getAid());
+					json.put("title", vo.getTitle());
+					json.put("content", vo.getContent());
 					arrayJson.put(json);
 				}
-			} catch(JSONException e) {
-				e.printStackTrace();
-			}
-			out.print(arrayJson);
-		}
-		
-		if(cmdReq.equals("read")) {
-			try {
-				String id = request.getParameter("id");
-				if (id == null ) {
-					out.print("계정을 확인하세요");
-					return;
-				}
-				StudentVO vo = studentDAO.read(id);
-				JSONObject json = new JSONObject();
-				json.put("id", vo.getId());
-				json.put("password", vo.getPasswd());
-				json.put("username", vo.getUsername());
-				json.put("snum", vo.getSnum());
-				json.put("depart", vo.getDepart());
-				json.put("mobile", vo.getMobile());
-				json.put("email", vo.getEmail());
-				arrayJson.put(json);
 			} catch(JSONException e) {
 				e.printStackTrace();
 			}

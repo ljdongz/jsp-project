@@ -32,6 +32,7 @@
 			<%
 			List<StudentVO> studentList = (List<StudentVO>) request.getAttribute("studentList");
 			for (StudentVO vo : studentList) {
+				if (vo.getId().equals("admin")) continue;
 			%>
 			<tr>
 				<td><%=vo.getId()%></td>

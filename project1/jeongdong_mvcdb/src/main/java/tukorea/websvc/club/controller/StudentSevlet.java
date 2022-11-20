@@ -106,18 +106,25 @@ public class StudentSevlet extends HttpServlet {
 			StudentDAO studentDAO = new StudentDAO();
 			
 			String id = request.getParameter("id");
-			String passwd = request.getParameter("passwd");
+			String passwd = request.getParameter("password");
 			
 			studentVO = studentDAO.read(id);
 			if (studentVO.getId().equals(id) && studentVO.getPasswd().equals(passwd)) {
-				RequestDispatcher view = request.getRequestDispatcher("login.html");
-				view.forward(request, response);
+				
+				if(id.equals("admin")) {
+					RequestDispatcher view = request.getRequestDispatcher("admin.jsp");
+					view.forward(request, response);
+				} else {
+					message = "반갑";
+					request.setAttribute("greetings", message);
+					request.setAttribute("studentVO", studentVO);
+					request.setAttribute("id", request.getParameter("id"));
+					RequestDispatcher view = request.getRequestDispatcher("result.jsp");
+					view.forward(request, response);
+				}
+				
 			} else {
-				message = "반갑";
-				request.setAttribute("greetings", message);
-				request.setAttribute("studentVO", studentVO);
-				request.setAttribute("id", request.getParameter("id"));
-				RequestDispatcher view = request.getRequestDispatcher("result.jsp");
+				RequestDispatcher view = request.getRequestDispatcher("login.html");
 				view.forward(request, response);
 			}
 			
