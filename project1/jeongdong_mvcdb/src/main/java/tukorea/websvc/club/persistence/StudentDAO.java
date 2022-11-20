@@ -48,7 +48,7 @@ public class StudentDAO {
 	
 	public boolean add(StudentVO vo) {
 		connect();
-		String sql = "insert into student values (?,?,?,?,?,?,?)";
+		String sql = "insert into jd_student values (?,?,?,?,?,?,?)";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, vo.getId());
@@ -72,7 +72,7 @@ public class StudentDAO {
 	
 	public boolean update(StudentVO vo) {
 		connect();
-		String sql = "update student set passwd=?, username=?, snum=?, depart=?, mobile=?, email=? where id=?";
+		String sql = "update jd_student set passwd=?, username=?, snum=?, depart=?, mobile=?, email=? where id=?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, vo.getPasswd());
@@ -95,7 +95,7 @@ public class StudentDAO {
 	public StudentVO read(String strId) {
 		connect();
 		StudentVO studentVO = new StudentVO();
-		String sql = "select * from student where id=?";
+		String sql = "select * from jd_student where id=?";
 		ResultSet rs = null;
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -121,7 +121,7 @@ public class StudentDAO {
 	
 	public void delete(String strId) {
 		connect();
-		String sql = "delete from student where id=?";
+		String sql = "delete from jd_student where id=?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, strId);
@@ -136,7 +136,7 @@ public class StudentDAO {
 	public ArrayList<StudentVO> getStudentList() {
 		connect();
 		ArrayList<StudentVO> studentlist = new ArrayList<StudentVO>();
-		String sql = "select * from student ";
+		String sql = "select * from jd_student ";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			ResultSet rs = pstmt.executeQuery();

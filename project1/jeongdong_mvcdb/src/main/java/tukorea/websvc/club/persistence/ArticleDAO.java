@@ -36,7 +36,7 @@ public class ArticleDAO {
 
 	public boolean add(ArticleVO ao) {
 		connect();
-		String sql = "insert into article(id, title, content) values (?,?,?)";
+		String sql = "insert into jd_article(id, title, content) values (?,?,?)";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, ao.getId());
@@ -54,7 +54,7 @@ public class ArticleDAO {
 
 	public boolean update(ArticleVO vo) {
 		connect();
-		String sql = "update article set title=?, content=? where aid=?";
+		String sql = "update jd_article set title=?, content=? where aid=?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, vo.getTitle());
@@ -73,7 +73,7 @@ public class ArticleDAO {
 	public ArticleVO read(String strId) {
 		connect();
 		ArticleVO articleVO = new ArticleVO();
-		String sql = "select * from article where aid=?";
+		String sql = "select * from jd_article where aid=?";
 		ResultSet rs = null;
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -96,7 +96,7 @@ public class ArticleDAO {
 
 	public void delete(String strId) {
 		connect();
-		String sql = "delete from article where aid=?";
+		String sql = "delete from jd_article where aid=?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, strId);
@@ -111,7 +111,7 @@ public class ArticleDAO {
 	public ArrayList<ArticleVO> getArticleList(String id) {
 		connect();
 		ArrayList<ArticleVO> articlelist = new ArrayList<ArticleVO>();
-		String sql = "select * from article where id=?";
+		String sql = "select * from jd_article where id=?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
