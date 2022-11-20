@@ -30,7 +30,7 @@ ul {
 	margin-left: 20px; margin-right:20px;
 }
 a {
-	text-decoration: underline;
+	text-decoration: none;
 	color: #0000a0;
 }
 table {

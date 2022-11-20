@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>TUK ToDoList</title>
 <link rel="stylesheet" href="resources/register.css" type="text/css"></link>
 </head>
 <body>

@@ -6,12 +6,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Admin Page</title>
 <link rel="stylesheet" href="resources/student.css" type="text/css"></link>
 
 </head>
 <body>
-	<header> TUK Student List </header>
+	<header>
+		<a href="http://localhost:8080/jeongdong_free">TUK Student List</a>
+	</header>
 	<hr>
 	<%
 	List<StudentVO> studentList = (List<StudentVO>) request.getAttribute("studentList");
