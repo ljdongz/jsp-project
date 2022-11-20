@@ -37,9 +37,9 @@
 						<td><c:out value="${vo.getMobile()}" /></td>
 						<td><c:out value="${vo.getEmail()}" /></td>
 						<td><a
-							href="http://localhost:8080/jeongdong_mvcdb/StudentSevlet?cmd=update&id=${vo.getId()}"
+							href="http://localhost:8080/jeongdong_free/StudentSevlet?cmd=update&id=${vo.getId()}"
 							target="_self"> 수정</a> <a
-							href="http://localhost:8080/jeongdong_mvcdb/StudentSevlet?cmd=delete&id=${vo.getId()}"
+							href="http://localhost:8080/jeongdong_free/StudentSevlet?cmd=delete&id=${vo.getId()}"
 							target="_self"> 삭제</a></td>
 					</tr>
 				</c:if>

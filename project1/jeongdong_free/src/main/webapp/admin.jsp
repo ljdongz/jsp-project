@@ -8,7 +8,7 @@
 </head>
 <body>
 	<p style="text-align: center;">
-		<a href="http://localhost:8080/jeongdong_mvcdb/AdminServlet?cmd=list"
+		<a href="http://localhost:8080/jeongdong_free/AdminServlet?cmd=list"
 			target="_self">전체 학생 목록 보기 이동</a>
 	</p>
 </body>

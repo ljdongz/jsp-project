@@ -13,7 +13,7 @@
 	<hr>
 	</p>
 	<p style="text-align: center;">
-		<a href="http://localhost:8080/jeongdong_mvcdb/create_article.jsp"
+		<a href="http://localhost:8080/jeongdong_free/create_article.jsp"
 			target="_self">추가</a>
 	</p>
 	<table>
@@ -31,9 +31,9 @@
 				<td><%=vo.getTitle()%></td>
 				<td><%=vo.getContent()%></td>
 				<td><a
-					href="http://localhost:8080/jeongdong_mvcdb/ArticleServlet?cmd=update&aid=<%=vo.getAid()%>"
+					href="http://localhost:8080/jeongdong_free/ArticleServlet?cmd=update&aid=<%=vo.getAid()%>"
 					target="_self"> 수정</a> <a
-					href="http://localhost:8080/jeongdong_mvcdb/ArticleServlet?cmd=delete&aid=<%=vo.getAid()%>&id=<%=vo.getId() %>"
+					href="http://localhost:8080/jeongdong_free/ArticleServlet?cmd=delete&aid=<%=vo.getAid()%>&id=<%=vo.getId() %>"
 					target="_self"> 삭제</a></td>
 			</tr>
 			<%

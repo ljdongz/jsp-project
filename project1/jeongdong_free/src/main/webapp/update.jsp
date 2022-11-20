@@ -10,7 +10,7 @@
 	<div align="center">
 		<header>Member Update</header>
 		<hr>
-		<form action="http://localhost:8080/jeongdong_mvcdb/StudentSevlet?cmd=update" method="post">
+		<form action="http://localhost:8080/jeongdong_free/StudentSevlet?cmd=update" method="post">
 		
 		<%
 			StudentVO student = (StudentVO)request.getAttribute("student");

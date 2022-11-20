@@ -14,7 +14,7 @@
 
 	<div>
 		<form
-			action="http://localhost:8080/jeongdong_mvcdb/ArticleServlet?cmd=update"
+			action="http://localhost:8080/jeongdong_free/ArticleServlet?cmd=update"
 			method="post">
 			<input type="hidden" name="aid" value=<%=vo.getAid()%>> <input
 				type="hidden" name="id" value=<%=vo.getId()%>>
