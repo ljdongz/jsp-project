@@ -23,7 +23,8 @@ session.setAttribute("id", request.getParameter("id"));
 		</a>
 
 	</header>
-	<p id="sect"><%=studentVO.getId()%>의 To Do List
+	<%-- <p id="sect"><%=studentVO.getId()%>의 To Do List --%>
+	<p id="sect"><%= session.getAttribute("id") %>의 To Do List
 	</p>
 	<br>
 
