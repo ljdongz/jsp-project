@@ -1,7 +1,7 @@
 package tukorea.websvc.club.domain;
 
 public class StudentVO {
-	private String id;
+	private String id = "";
 	private String passwd;
 	private String username;
 	private String snum;

@@ -6,6 +6,7 @@
 		<item value="Apache Tomcat v9.0"/>
 	</list>
 	<list key="J2EE_EXPORT_JST_WEB">
+		<item value="/Users/jeong/Desktop/학교/웹서비스/jeongdong_free.war"/>
 		<item value="/Users/jeong/Desktop/jeongdong_mvcdb.war"/>
 		<item value="/Users/jeong/Desktop/jeongdong_reg.war"/>
 	</list>

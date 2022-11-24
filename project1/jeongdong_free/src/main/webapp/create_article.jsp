@@ -12,7 +12,7 @@
 
 	<div>
 		<form
-			action="http://localhost:8080/jeongdong_mvcdb/ArticleServlet?cmd=create"
+			action="http://localhost:8080/jeongdong_free/ArticleServlet?cmd=create"
 			method="post">
 			<input type="hidden" name="id"
 				value=<%=session.getAttribute("id")%>>

@@ -21,7 +21,7 @@
 			<tr>
 				<td>제목</td>
 				<td>내용</td>
-				<td>관리</td>
+				<td>편집</td>
 			</tr>
 			<%
 			List<ArticleVO> articleList = (List<ArticleVO>)request.getAttribute("ArticleList");
