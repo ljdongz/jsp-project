@@ -14,23 +14,23 @@ session.setAttribute("id", request.getParameter("id"));
 <link rel="stylesheet" href="resources/student.css" type="text/css"></link>
 </head>
 <body>
-	<%
+<%-- 	<%
 	StudentVO studentVO = (StudentVO) request.getAttribute("studentVO");
-	%>
+	%> --%>
 	<header>
 		<a href="http://localhost:8080/jeongdong_free">TUKOREA 2022 <br>
 			To Do List
 		</a>
 
 	</header>
-	<%-- <p id="sect"><%=studentVO.getId()%>의 To Do List --%>
-	<p id="sect"><%= session.getAttribute("id") %>의 To Do List
+	<p id="sect">${sessionScope.id}의 To Do List
 	</p>
+	<p><a href="http://localhost:8080/jeongdong_free/logout.jsp">로그아웃</a></p>
 	<br>
 
 	<p style="text-align: center;">
 		<a
-			href="http://localhost:8080/jeongdong_free/ArticleServlet?cmd=list&id=<%=session.getAttribute("id")%>"
+			href="http://localhost:8080/jeongdong_free/ArticleServlet?cmd=list&id=${sessionScope.id}"
 			target="_self">Todo List</a>
 	</p>
 

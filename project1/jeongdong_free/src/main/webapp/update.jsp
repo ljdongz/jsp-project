@@ -12,19 +12,19 @@
 		<hr>
 		<form action="http://localhost:8080/jeongdong_free/StudentSevlet?cmd=update" method="post">
 		
-		<%
+<%-- 		<%
 			StudentVO student = (StudentVO)request.getAttribute("student");
-		%>
+		%> --%>
 		<fieldset>
 			<legend> Information Update </legend>
 			<ul>
-				<li>ID: <input type="text" name="id" value= <%=student.getId() %> readonly ></li>
-				<li>PASSWORD: <input type="password" name="passwd" value= <%=student.getPasswd() %> autofocus ></li>
-				<li>USERNAME: <input type="text" name="username" value= <%=student.getUsername() %>></li>
-				<li>STUDENTNUMBER: <input type="text" name="snum" value= <%=student.getSnum() %>></li>
-				<li>DEPART: <input type="text" name="depart" value= <%=student.getDepart() %>></li>
-				<li>MOBILE: <input type="text" name="mobile" value= <%=student.getMobile() %>></li>
-				<li>EMAIL: <input type="text" name="email" value= <%=student.getEmail() %>></li>
+				<li>ID: <input type="text" name="id" value= "${requestScope.student.getId()}" readonly ></li>
+				<li>PASSWORD: <input type="password" name="passwd" value= "${requestScope.student.getPasswd()}" autofocus ></li>
+				<li>USERNAME: <input type="text" name="username" value= "${requestScope.student.getUsername()}"></li>
+				<li>STUDENTNUMBER: <input type="text" name="snum" value= "${requestScope.student.getSnum()}"></li>
+				<li>DEPART: <input type="text" name="depart" value= "${requestScope.student.getDepart()}"></li>
+				<li>MOBILE: <input type="text" name="mobile" value= "${requestScope.student.getMobile()}"></li>
+				<li>EMAIL: <input type="text" name="email" value= "${requestScope.student.getEmail()}"></li>
 			</ul>
 		</fieldset>
 		<br>

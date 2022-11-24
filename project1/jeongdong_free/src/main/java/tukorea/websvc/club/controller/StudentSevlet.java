@@ -125,7 +125,7 @@ public class StudentSevlet extends HttpServlet {
 			String result = studentService.login(id, passwd);
 			
 			if (result.equals("admin")) {
-				RequestDispatcher view = request.getRequestDispatcher("admin.jsp");
+				RequestDispatcher view = request.getRequestDispatcher("admin.html");
 				view.forward(request, response);
 			} else if (result.equals("user")) {
 				request.setAttribute("id", id);

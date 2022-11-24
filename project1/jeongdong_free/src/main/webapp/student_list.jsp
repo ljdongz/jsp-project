@@ -15,9 +15,6 @@
 		<a href="http://localhost:8080/jeongdong_free">TUK Student List</a>
 	</header>
 	<hr>
-	<%
-	List<StudentVO> studentList = (List<StudentVO>) request.getAttribute("studentList");
-	%>
 	<table>
 		<tbody>
 			<tr>
@@ -29,7 +26,7 @@
 				<td>메일주소</td>
 				<td>관리</td>
 			</tr>
-			<c:forEach var="vo" items="${studentList}">
+			<c:forEach var="vo" items="${requestScope.studentList}">
 				<c:if test="${not vo.getId().equals('admin')}">
 					<tr>
 						<td><c:out value="${vo.getId()}" /></td>
@@ -47,28 +44,6 @@
 				</c:if>
 
 			</c:forEach>
-			<%-- 			<%
-			/* List<StudentVO> studentList = (List<StudentVO>) request.getAttribute("studentList"); */
-			for (StudentVO vo : studentList) {
-				if (vo.getId().equals("admin"))
-					continue;
-			%>
-			<tr>
-				<td><%=vo.getId()%></td>
-				<td><%=vo.getUsername()%></td>
-				<td><%=vo.getSnum()%></td>
-				<td><%=vo.getDepart()%></td>
-				<td><%=vo.getMobile()%></td>
-				<td><%=vo.getEmail()%></td>
-				<td><a
-					href="http://localhost:8080/jeongdong_mvcdb/StudentSevlet?cmd=update&id=<%=vo.getId()%>"
-					target="_self"> 수정</a> <a
-					href="http://localhost:8080/jeongdong_mvcdb/StudentSevlet?cmd=delete&id=<%=vo.getId()%>"
-					target="_self"> 삭제</a></td>
-			</tr>
-			<%
-			}
-			%> --%>
 		</tbody>
 	</table>
 </body>

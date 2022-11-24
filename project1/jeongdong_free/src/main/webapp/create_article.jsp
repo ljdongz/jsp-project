@@ -15,7 +15,7 @@
 			action="http://localhost:8080/jeongdong_free/ArticleServlet?cmd=create"
 			method="post">
 			<input type="hidden" name="id"
-				value=<%=session.getAttribute("id")%>>
+				value=${sessionScope.id}>
 			<fieldset>
 				<ul>
 					<li>제목 : <input type="text" name="title" autofocus required
