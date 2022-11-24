@@ -7,42 +7,40 @@
 <head>
 <meta charset="UTF-8">
 <title>TUK ToDoList</title>
-<link rel="stylesheet" href="resources/student.css" type="text/css"></link>
+<link rel="stylesheet" href="resources/table.css" type="text/css"></link>
+<link rel="stylesheet" href="resources/main.css" type="text/css"></link>
 </head>
 <body>
-	<header> To Do List </header>
+	<header> <a href="http://localhost:8080/jeongdong_free/result.jsp">To Do List</a> </header>
 	<hr>
-	</p>
-	<p style="text-align: center;">
-		<a href="http://localhost:8080/jeongdong_free/create_article.jsp"
-			target="_self">추가</a>
-	</p>
+
 	<table>
+		<thead>
+			<tr>
+				<th>제목</th>
+				<th>내용</th>
+				<th>편집</th>
+			</tr>
+		</thead>
 		<tbody>
-			<tr>
-				<td>제목</td>
-				<td>내용</td>
-				<td>편집</td>
-			</tr>
-<%-- 			<%
-			List<ArticleVO> articleList = (List<ArticleVO>) request.getAttribute("ArticleList");
-			for (ArticleVO vo : articleList) {
-			%> --%>
 			<c:forEach var="vo" items="${requestScope.ArticleList}">
-			<tr>
-				<td>${vo.getTitle()}</td>
-				<td>${vo.getContent()}</td>
-				<td><a
-					href="http://localhost:8080/jeongdong_free/ArticleServlet?cmd=update&aid=${vo.getAid()}>"
-					target="_self"> 수정</a> <a
-					href="http://localhost:8080/jeongdong_free/ArticleServlet?cmd=delete&aid=${vo.getAid()}&id=${vo.getId()}"
-					target="_self"> 삭제</a></td>
-			</tr>
+				<tr>
+					<td>${vo.getTitle()}</td>
+					<td>${vo.getContent()}</td>
+					<td>
+						<button class="view" type="button"
+							onclick="location.href='http://localhost:8080/jeongdong_free/ArticleServlet?cmd=update&aid=${vo.getAid()}'">수정</button>
+						<button class="delete" type="button"
+							onclick="location.href='http://localhost:8080/jeongdong_free/ArticleServlet?cmd=delete&aid=${vo.getAid()}&id=${vo.getId()}'">삭제</button>
+					</td>
+				</tr>
 			</c:forEach>
-<%-- 			<%
-			}
-			%> --%>
 		</tbody>
 	</table>
+
+	<p style="text-align: center;">
+		<button class="add" type="button"
+			onclick="location.href='http://localhost:8080/jeongdong_free/create_article.jsp'">할 일 추가</button>
+	</p>
 </body>
 </html>

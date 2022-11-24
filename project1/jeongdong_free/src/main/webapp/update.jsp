@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>TUK ToDoList</title>
+<link rel="stylesheet" href="resources/main.css" type="text/css"></link>
 </head>
 <body>
 	<div align="center">
@@ -29,8 +30,8 @@
 		</fieldset>
 		<br>
 		<fieldset>
-			<input type="submit" name="submit" value="최종수정">
-			<input type="reset" name="reset" value="다시작성">
+			<input type="submit" name="submit" value="수정">
+			<input type="reset" name="reset" value="다시 작성">
 		</fieldset>
 		</form>
 	</div>

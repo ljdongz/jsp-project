@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>TUK ToDoList</title>
-<link rel="stylesheet" href="resources/register.css" type="text/css"></link>
+<link rel="stylesheet" href="resources/main.css" type="text/css"></link>
 </head>
 <body>
 	<header>Create Your To Do List</header>
@@ -25,7 +25,7 @@
 			</fieldset>
 			<br>
 			<fieldset>
-				<input type="submit" name="submit" value="보내기">
+				<input type="submit" name="submit" value="생성">
 			</fieldset>
 		</form>
 	</div>

@@ -4,34 +4,30 @@
 
 <%
 request.setCharacterEncoding("UTF-8");
-session.setAttribute("id", request.getParameter("id"));
+if (session.isNew()) session.setAttribute("id", request.getParameter("id"));
 %>
 
 <html>
 <head>
 <meta charset="UTF-8">
 <title>TUK ToDoList</title>
-<link rel="stylesheet" href="resources/student.css" type="text/css"></link>
+<link rel="stylesheet" href="resources/main.css" type="text/css"></link>
 </head>
 <body>
-<%-- 	<%
-	StudentVO studentVO = (StudentVO) request.getAttribute("studentVO");
-	%> --%>
+
 	<header>
-		<a href="http://localhost:8080/jeongdong_free">TUKOREA 2022 <br>
-			To Do List
-		</a>
+		TUKOREA<br> To Do List
 
 	</header>
-	<p id="sect">${sessionScope.id}의 To Do List
+	<p id="sect">${sessionScope.id}님,<br> TUK ToDoList 서비스에 오신 것을
+		환영합니다.
 	</p>
-	<p><a href="http://localhost:8080/jeongdong_free/logout.jsp">로그아웃</a></p>
-	<br>
 
 	<p style="text-align: center;">
 		<a
 			href="http://localhost:8080/jeongdong_free/ArticleServlet?cmd=list&id=${sessionScope.id}"
-			target="_self">Todo List</a>
+			target="_self">Todo List 보기</a> <br>
+		<br> <a href="http://localhost:8080/jeongdong_free/logout.jsp">로그아웃</a>
 	</p>
 
 </body>

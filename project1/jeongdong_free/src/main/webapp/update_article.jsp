@@ -4,13 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="resources/main.css" type="text/css"></link>
 <title>TUK ToDoList</title>
 </head>
 <body>
 <%-- 	<%
 	ArticleVO vo = (ArticleVO) request.getAttribute("article");
 	%> --%>
-	<header>Login Your Account</header>
+	<header>Update Article</header>
 
 	<div>
 		<form
@@ -29,7 +30,7 @@
 			</fieldset>
 			<br>
 			<fieldset>
-				<input type="submit" name="submit" value="보내기">
+				<input type="submit" name="submit" value="수정">
 			</fieldset>
 		</form>
 	</div>

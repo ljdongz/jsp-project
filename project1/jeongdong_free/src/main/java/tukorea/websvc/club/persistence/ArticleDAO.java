@@ -19,7 +19,7 @@ public class ArticleDAO {
 	private void connect() {
 		try {
 			Class.forName(jdbc_driver);
-			conn = DriverManager.getConnection(jdbc_url, "jspbook", "wjdehd3985");
+			conn = DriverManager.getConnection(jdbc_url, "jspbook", "1234");
 		} catch (Exception e) {
 			System.out.println(e);
 		}
